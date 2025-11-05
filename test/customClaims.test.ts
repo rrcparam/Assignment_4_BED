@@ -2,7 +2,6 @@ import { auth } from "../src/config/firebaseConfig";
 import { setUserRole, getUserById } from "../src/api/v1/controllers/userController";
 import { Request, Response } from "express";
 
-// Mock the  Firebase Admin SDK
 
 jest.mock("../src/config/firebaseConfig", () => ({
   auth: {

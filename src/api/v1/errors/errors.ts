@@ -29,8 +29,11 @@ export class ValidationError extends AppError {
  * Authentication Error (401)
  */
 export class AuthenticationError extends AppError {
-  constructor(message = "Authentication failed") {
-    super(message, HTTP_STATUS.UNAUTHORIZED, "AUTHENTICATION_ERROR");
+  constructor(
+    message = "Authentication failed",
+    code = "AUTHENTICATION_ERROR"
+  ) {
+    super(message, HTTP_STATUS.UNAUTHORIZED, code);
   }
 }
 
@@ -38,8 +41,11 @@ export class AuthenticationError extends AppError {
  * Authorization Error (403)
  */
 export class AuthorizationError extends AppError {
-  constructor(message = "Forbidden access") {
-    super(message, HTTP_STATUS.FORBIDDEN, "AUTHORIZATION_ERROR");
+  constructor(
+    message = "Forbidden access",
+    code = "AUTHORIZATION_ERROR"
+  ) {
+    super(message, HTTP_STATUS.FORBIDDEN, code);
   }
 }
 

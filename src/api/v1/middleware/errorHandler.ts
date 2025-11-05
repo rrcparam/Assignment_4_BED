@@ -42,14 +42,14 @@ const errorHandler = (
     }
 
     if (err instanceof AppError) {
-        // Handle our custom application errors with their specific status codes
-        res.status(err.statusCode).json(errorResponse(err.message, err.code));
-    } else {
-        // Handle unexpected errors (programming errors, third-party library errors, etc.)
-        res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json(
-            errorResponse("An unexpected error occurred", "UNKNOWN_ERROR")
-        );
-    }
+    res
+      .status(err.statusCode)
+      .json(errorResponse(err.message, err.code));
+  } else {
+    res
+      .status(HTTP_STATUS.INTERNAL_SERVER_ERROR)
+      .json(errorResponse("An unexpected error occurred", "UNKNOWN_ERROR"));
+  }
 };
 
 export default errorHandler;

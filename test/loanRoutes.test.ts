@@ -1,6 +1,12 @@
 import request from "supertest";
 import app from "../src/app";
 
+
+jest.mock("../src/api/v1/middleware/authenticate", () => ({
+  __esModule: true,
+  default: jest.fn((_req, _res, next) => next()),
+}));
+
 describe("Loan API Endpoints ", () => {
   it("GET /api/v1/loans → should return all loans", async () => {
    

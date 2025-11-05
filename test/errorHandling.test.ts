@@ -4,6 +4,7 @@ import errorHandler from "../src/api/v1/middleware/errorHandler";
 import { AppError } from "../src/api/v1/errors/errors";
 import { HTTP_STATUS } from "../src/constants/httpConstants";
 
+
 describe("Error Handling System", () => {
 
   // Arrange
