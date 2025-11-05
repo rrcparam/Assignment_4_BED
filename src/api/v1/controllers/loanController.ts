@@ -8,7 +8,7 @@ let loans: Loan[] = [
   { id: "L004", applicantName: "Prem Dhillon", amount: 60000, status: "PENDING" },
 ];
 
-// Its Purpose Retrieve all loan applications
+// Its Purpose Retrieve all loan application.
 
 export const getAllLoans = (_req: Request, res: Response) => {
   res.status(200).json({
